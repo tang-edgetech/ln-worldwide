@@ -9,10 +9,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         var paymentOptionsSwiper = new Swiper('#swiper-payment-options', {
             slidesPerView: 8,
-            loop: true,
+            loop: false,
+            speed: 6000,
             autoplay: {
-                delay: 8000,
+                delay: 0,
                 disableOnInteraction: true,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: "auto",
+                    loop: true,
+                    centeredSlides: true,
+                    spaceBetween: 25,
+                    allowTouchMove: false,
+                },
+                768: {
+                    slidesPerView: 8,
+                    loop: false,
+                }
             }
         });
     });

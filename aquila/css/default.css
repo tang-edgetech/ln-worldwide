@@ -2,16 +2,16 @@
     padding: 2rem!important;
 }
 .pt-4-2, .py-4-2 {
-    margin-top: 2rem!important;
+    padding-top: 2rem!important;
 }
 .pb-4-2, .py-4-2 {
-    margin-bottom: 2rem!important;
+    padding-bottom: 2rem!important;
 }
 .ps-4-2, .px-4-2 {
-    margin-left: 2rem!important;
+    padding-left: 2rem!important;
 }
 .pe-4-2, .px-4-2 {
-    margin-right: 2rem!important;
+    padding-right: 2rem!important;
 }
 .m-4-2 {
     margin: 2rem!important;
@@ -33,16 +33,16 @@
         padding: 2rem!important;
     }
     .pt-md-4-2, .py-md-4-2 {
-        margin-top: 2rem!important;
+        padding-top: 2rem!important;
     }
     .pb-md-4-2, .py-md-4-2 {
-        margin-bottom: 2rem!important;
+        padding-bottom: 2rem!important;
     }
     .ps-md-4-2, .px-md-4-2 {
-        margin-left: 2rem!important;
+        padding-left: 2rem!important;
     }
     .pe-md-4-2, .px-md-4-2 {
-        margin-right: 2rem!important;
+        padding-right: 2rem!important;
     }
     .m-md-4-2 {
         margin: 2rem!important;
@@ -65,16 +65,16 @@
         padding: 2rem!important;
     }
     .pt-lg-4-2, .py-lg-4-2 {
-        margin-top: 2rem!important;
+        padding-top: 2rem!important;
     }
     .pb-lg-4-2, .py-lg-4-2 {
-        margin-bottom: 2rem!important;
+        padding-bottom: 2rem!important;
     }
     .ps-lg-4-2, .px-lg-4-2 {
-        margin-left: 2rem!important;
+        padding-left: 2rem!important;
     }
     .pe-lg-4-2, .px-lg-4-2 {
-        margin-right: 2rem!important;
+        padding-right: 2rem!important;
     }
     .m-lg-4-2 {
         margin: 2rem!important;
@@ -97,16 +97,16 @@
         padding: 2rem!important;
     }
     .pt-xl-4-2, .py-xl-4-2 {
-        margin-top: 2rem!important;
+        padding-top: 2rem!important;
     }
     .pb-xl-4-2, .py-xl-4-2 {
-        margin-bottom: 2rem!important;
+        padding-bottom: 2rem!important;
     }
     .ps-xl-4-2, .px-xl-4-2 {
-        margin-left: 2rem!important;
+        padding-left: 2rem!important;
     }
     .pe-xl-4-2, .px-xl-4-2 {
-        margin-right: 2rem!important;
+        padding-right: 2rem!important;
     }
     .m-xl-4-2 {
         margin: 2rem!important;
@@ -129,16 +129,16 @@
         padding: 2rem!important;
     }
     .pt-xxl-4-2, .py-xxl-4-2 {
-        margin-top: 2rem!important;
+        padding-top: 2rem!important;
     }
     .pb-xxl-4-2, .py-xxl-4-2 {
-        margin-bottom: 2rem!important;
+        padding-bottom: 2rem!important;
     }
     .ps-xxl-4-2, .px-xxl-4-2 {
-        margin-left: 2rem!important;
+        padding-left: 2rem!important;
     }
     .pe-xxl-4-2, .px-xxl-4-2 {
-        margin-right: 2rem!important;
+        padding-right: 2rem!important;
     }
     .m-xxl-4-2 {
         margin: 2rem!important;

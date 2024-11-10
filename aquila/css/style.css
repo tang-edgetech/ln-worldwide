@@ -91,6 +91,8 @@ html, body {
     color: #fff;
 }
 #disclaimerModal .modal-body {
+    border-radius: 16px;
+    overflow: hidden;
     padding: 2rem;
     background-image: url(/aquila/images/bg-aquila-popup.png);
     background-position: center;
@@ -148,6 +150,13 @@ html, body {
 .footer-row.footer-row-middle {
     
 }
+.po-thumbnail {
+    
+}
+.po-title {
+    font-size: 12px;
+    line-height: 15px;
+}
 .footer-row.footer-row-with-border > div::before {
     content: '';
     display: block;
@@ -174,7 +183,22 @@ html, body {
     transform: translate(-50%, 0);
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 767px) {
+    .swiper-po {
+        width: 180px;
+    }
+    #swiper-payment-options .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+    .footer-navigation .nav .nav-item, .footer-copyright {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .footer-navigation .nav .nav-item:not(:last-child)::after {
+        bottom: 0;
+        height: 14px;
+    }
+}
 @media (min-width: 768px) {}
 @media (min-width: 768px) and (orientation: landscape) {
     #introduction .background {
