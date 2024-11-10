@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    font-family: "Noto Sans", serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+#masthead {
+    background: rgba(18, 18, 18, 0.7);
+}
+#masthead .navbar-brand {
+    width: 100px;
+}
+#masthead .navbar-nav {
+    gap: 60px;
+}
+#masthead .navbar-nav .nav-item {
+    padding: 8px;
+}
+#masthead .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: capitalize;
+}
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#introduction .background {
+    background-image: url(/images/bg-aquila-intro-banner.jpg);
+}
+.intro-banner::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #000 40%, #57575700 65%, #66666600 100% );
+    opacity: 0.6;
+}
+.intro-banner > div {
+    z-index: 1;
+}
+.btn, a.btn, button.btn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-origin: center;
+    animation: pulse .75s infinite alternate;
+}
+.btn, a.btn, button.btn, .btn:hover, a.btn:hover, button.btn:hover, .btn:focus, a.btn:focus, button.btn:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background: none;
+}
+.btn:hover, a.btn:hover, button.btn:hover {
+    opacity: 0.85;
+}
+.btn span, a.btn span, button.btn span {
+    z-index: 1;
+}
+.btn::before, a.btn::before, button.btn::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(104deg, rgba(255, 204, 8, 0.8) 0%, rgba(213, 155, 20, 0.9) 46%, rgba(164, 98, 34, 0.7) 100%);
+}
+@keyframes pulse {
+    to { transform: scale(1.05); }
+}
+
+@media (max-width: 768px) {}
+@media (min-width: 768px) {}
+@media (min-width: 768px) and (orientation: landscape) {
+    #introduction .background {
+        background-image: url(/images/bg-aquila-intro-banner.jpg);
+    }
+}
+@media (min-width: 1200px) {
+    #masthead .navbar-nav .nav-item .nav-link {
+        font-size: 1.666667vw;
+        line-height: 2.22222vw;
+    }
+    #introduction .intro-banner {
+        height: 43.05556vw;
+        padding: 6.9444vw 0;
+    }
+    .intro-banner h1 {
+        font-size: 1.6667vw;
+        line-height: 2.3611vw;
+    }
+    .intro-banner h1 .t1 {
+        font-size: 3.125vw;
+        line-height: 2.3611vw;
+    }
+}
+@media (min-width: 1400px) {
+
+}
