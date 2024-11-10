@@ -39,7 +39,7 @@ html, body {
     background-repeat: no-repeat;
 }
 #introduction .background {
-    background-image: url(/images/bg-aquila-intro-banner.jpg);
+    background-image: url(/aquila/images/bg-aquila-intro-banner.jpg);
 }
 .intro-banner::before {
     content: '';
@@ -87,12 +87,98 @@ html, body {
 @keyframes pulse {
     to { transform: scale(1.05); }
 }
+#disclaimerModal {
+    color: #fff;
+}
+#disclaimerModal .modal-body {
+    padding: 2rem;
+    background-image: url(/aquila/images/bg-aquila-popup.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.disclaimer-title, .btn.btn-disagree {
+    color: #DFC474;
+}
+.disclaimer-text {
+    margin-bottom: 2rem;
+}
+#disclaimerModal .disclaimer-cta {
+    gap: 2rem;
+}
+.disclaimer-cta .btn, .disclaimer-cta a.btn, .disclaimer-cta button.btn {
+    min-width: 100px;
+}
+.disclaimer-cta .btn.btn-disagree, .disclaimer-cta a.btn.btn-disagree, .disclaimer-cta button.btn.btn-disagree {
+    border: 1px solid #FFCC08;
+}
+.disclaimer-cta .btn.btn-disagree::before, .disclaimer-cta a.btn.btn-disagree::before, .disclaimer-cta button.btn.btn-disagree::before {
+    background: none;
+}
+.disclaimer-close {
+    width: 24px;
+    height: 24px;
+    background: none;
+    box-shadow: none;
+    border: none;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+.disclaimer-close:not(:hover) {
+    opacity: 0.85;
+}
+.disclaimer-close::before, .disclaimer-close::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: #DFC474;
+    top: 50%;
+    left: 50%;
+}
+.disclaimer-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.disclaimer-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.footer-row.footer-row-middle {
+    
+}
+.footer-row.footer-row-with-border > div::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #DFC474;
+}
+.footer-navigation .nav {
+    gap: 30px
+}
+.footer-navigation .nav .nav-item:not(:last-child)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 4px;
+    right: -15px;
+    width: 2px;
+    height: 16px;
+    background: #fff;
+    transform: translate(-50%, 0);
+}
 
 @media (max-width: 768px) {}
 @media (min-width: 768px) {}
 @media (min-width: 768px) and (orientation: landscape) {
     #introduction .background {
-        background-image: url(/images/bg-aquila-intro-banner.jpg);
+        background-image: url(/aquila/images/bg-aquila-intro-banner.jpg);
     }
 }
 @media (min-width: 1200px) {
