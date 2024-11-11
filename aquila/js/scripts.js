@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     $(document).ready(function() {
+        console.log(aquila.home_url);
+        if( !$('body').hasClass('home') ) {
+            $(document).on('click', '#masthead .navbar .navbar-nav .nav-link', function(e) {
+                var $this = $(this),
+                    $target = $this.attr('href'),
+                    $menu_item = $target.replace('#', '');
+                if( $menu_item == 'about-us' || $menu_item == 'services' ) {
+                    e.preventDefault();
+                    var newURL = aquila.home_url+$target;
+                    window.location.href = newURL;
+                }
+            });
+        }
+
+
         let lastScrollTop = 0;
     
         $(window).on('scroll', function() {

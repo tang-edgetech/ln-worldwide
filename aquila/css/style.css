@@ -76,12 +76,17 @@ a.text-white:hover, a.text-yellow:hover {
     position: relative;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 #introduction .background {
     background-image: url(/aquila/images/bg-aquila-intro-banner.jpg);
+}
+#contact .background {
+    background-image: url(/aquila/images/bg-aquila-contact-banner.jpg);
 }
 .intro-banner::before {
     content: '';
@@ -252,6 +257,46 @@ a.text-white:hover, a.text-yellow:hover {
     font-size: 12px;
     line-height: 15px;
 }
+#contact {
+    padding: 80px 0;
+}
+.wp-form-row {
+    gap: 16px;
+}
+.wp-form-group, .wp-form-group * {
+    display: block;
+    width: 100%;
+}
+.wp-form-group .input-control, .wp-form-group input.input-control, .wp-form-group textarea.input-control {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 1px solid #DFC474;
+    padding: 9px 13px;
+    resize: none;
+}
+.wp-form-group .input-control::placeholder, .wp-form-group input.input-control::placeholder, .wp-form-group textarea.input-control::placeholder {
+    color: #fff;
+}
+.wp-checkbox {
+    gap: 16px;
+}
+.wp-checkbox > input {
+    width: 25px;
+    height: 25px;
+}
+.wp-form .wp-form-row-action {
+    padding-top: 20px;
+}
+.wp-form .wp-form-row-action button.wpcf7-submit, .wp-form .wp-form-row-action input.wpcf7-submit {
+    padding: 8px 16px;
+    width: 150px;
+    background: linear-gradient(104deg, #FDDE83, #FFFCB1);
+    border: none;
+    border-radius: 5px;
+}
+.wp-form .wp-form-row-action button.wpcf7-submit:hover, .wp-form .wp-form-row-action input.wpcf7-submit:hover {
+    opacity: 0.85;
+}
 .footer-row.footer-row-with-border > div:first-child::before {
     content: '';
     display: block;
@@ -277,7 +322,73 @@ a.text-white:hover, a.text-yellow:hover {
     background: #fff;
     transform: translate(-50%, 0);
 }
-
+.magic-tabs .magic-tab-nav {
+    gap: 8px;
+}
+.magic-tabs .magic-tab-nav .nav-item {
+    padding: 0;
+}
+.magic-tabs .magic-tab-nav .nav-item .nav-link {
+    color: #FFFFFF;
+    padding: 16px 45px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    background: linear-gradient(104deg,rgba(255,255,255,0.25), rgba(255,255,255,0.1) );
+}
+.magic-tabs .magic-tab-nav .nav-item .nav-link:hover {
+    opacity: 0.85;
+}
+.magic-tabs .magic-tab-nav .nav-item .nav-link.active {
+    background: #fff;
+    color: #000;
+    pointer-events: none;
+}
+.text-editor > ol {
+    counter-reset: list-counter;
+    list-style-type: decimal;
+}
+.text-editor ol > li {
+    list-style: none;
+}
+.text-editor ol li h5 {
+    display: inline-block;
+}
+.text-editor ol > li::marker {
+    display: none;
+}
+.text-editor > ol > li::before {
+    font-weight: 600;
+    font-size: 16px;
+}
+.text-editor > ol > li {
+    counter-increment: list-counter;
+}
+.text-editor > ol > li::before {
+    content: counter(list-counter) ". ";
+    margin-right: 5px; /* Adjust as needed */
+}
+.text-editor > ol > ol {
+    counter-reset: sublist-counter;
+    list-style-type: none;
+    margin-left: 20px;
+}
+.text-editor > ol li > ol > li {
+    counter-increment: sublist-counter;
+}
+.text-editor > ol > li > ol > li::before {
+    content: counter(list-counter) "." counter(sublist-counter) " ";
+    margin-right: 5px;
+}
+.text-editor > ol li > ol > li > ol > li {
+    counter-increment: sub-sublist-counter;
+}
+.text-editor > ol > li > ol > li > ol > li::before {
+    content: counter(list-counter) "." counter(sublist-counter) "." counter(sub-sublist-counter) ". ";
+}
+.text-editor ul li {
+    list-style-type: disc;
+}
 @media (max-width: 767px) {
     html, body {
         font-size: 3.38164vw;
@@ -358,6 +469,11 @@ a.text-white:hover, a.text-yellow:hover {
         bottom: 0;
         height: 14px;
     }
+    .magic-tabs .magic-tab-nav .nav-item .nav-link {
+        padding: 10px 24px;
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 @media (min-width: 768px) {
     .iconbox-services {
@@ -432,6 +548,9 @@ a.text-white:hover, a.text-yellow:hover {
     #swiper-payment-options .swiper-po {
         width: 150px;
     }
+    .magic-tabs .magic-tab-nav .nav-item .nav-link {
+        padding: 16px 35px;
+    }
 }
 @media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
     .iconbox-services {
@@ -500,6 +619,10 @@ a.text-white:hover, a.text-yellow:hover {
     .po-title {
         font-size: 0.83333vw;
         line-height: 1.041667vw;
+    }
+    #contact .text-editor h2 {
+        font-size: 2.0833vw;
+        line-height: 2.5vw;
     }
 }
 @media (min-width: 1800px) {
