@@ -11,8 +11,15 @@ html, body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
-#masthead {
-    background: rgba(18, 18, 18, 0.7);
+.app {
+    padding-top: 85px;
+}
+#masthead nav.navbar {
+    background: rgba(18, 18, 18, 1);
+    transition: all 0.5s ease;
+}
+#masthead nav.navbar.scroll-down {
+    transform: translateY(-100%);
 }
 #masthead .navbar-brand {
     width: 100px;
@@ -29,6 +36,38 @@ html, body {
     font-size: 24px;
     line-height: 32px;
     text-transform: capitalize;
+}
+.hamburger, .hamburger:hover, .hamburger:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+.hamburger .hamburger-box {
+    height: 20px;
+}
+.hamburger .hamburger-box, .hamburger .hamburger-inner, .hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after {
+    width: 28px;
+}
+.hamburger .hamburger-inner, .hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after {
+    height: 3px;
+}
+.hamburger .hamburger-inner, .hamburger .hamburger-inner::before, .hamburger .hamburger-inner::after, .hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+    background-color: #fff;
+}
+.hamburger .hamburger-inner::before {
+    top: 8px;
+}
+.hamburger .hamburger-inner::after {
+    top: 16px;
+}
+.hamburger.is-active .hamburger-inner::after {
+    top: 20px;
+}
+.text-yellow, .text-yellow:hover, .text-yellow:focus {
+    color: #FDDE83;
+}
+a.text-white:hover, a.text-yellow:hover {
+    opacity: 0.85;
 }
 .background {
     position: relative;
@@ -147,17 +186,70 @@ html, body {
 .disclaimer-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-.footer-row.footer-row-middle {
-    
+#statistics {
+    padding: 50px 0;
 }
-.po-thumbnail {
-    
+.statistic-number, .statistic-number * {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+}
+.statistic-number {
+    position: relative;
+    display: inline-block;
+}
+.title-gradient, .statistic-number h4 {
+    position: relative;
+    font-size: 60px;
+    line-height: 72px;
+    color: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url(/aquila/images/bg-text-gradient.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.statistic-title {
+    font-size: 30px;
+    line-height: 36px;
+}
+.wwa-inner {
+    padding: 90px 130px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background: rgba(30, 78, 137, 0.6);
+}
+.wwa-col {
+    width: 100%;
+}
+#services {
+    padding: 50px 0;
+}
+.iconbox-services {
+    display: grid;
+}
+.iconbox-services .iconbox-item {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.iconbox-services .iconbox-item:hover {
+    border-color: #FDDE83;
+    box-shadow: 0 4px 4px 0 rgba(253, 222, 131, 0.2);
+}
+.extra-content {
+    padding-top: 70px;
+}
+.responsible-gambling-icon {
+    width: 85px;
+    height: 85px;
 }
 .po-title {
     font-size: 12px;
     line-height: 15px;
 }
-.footer-row.footer-row-with-border > div::before {
+.footer-row.footer-row-with-border > div:first-child::before {
     content: '';
     display: block;
     position: absolute;
@@ -184,11 +276,76 @@ html, body {
 }
 
 @media (max-width: 767px) {
-    .swiper-po {
-        width: 180px;
+    html, body {
+        font-size: 3.38164vw;
+        line-height: 4.8309vw;
     }
-    #swiper-payment-options .swiper-wrapper {
-        transition-timing-function: linear;
+    .app {
+        padding-top: 72px;
+    }
+    #masthead .navbar-brand {
+        width: 70px;
+    }
+    #masthead .navbar-nav {
+        background:rgba(18, 18, 18, 1);
+        gap: 20px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    #masthead .navbar-nav .nav-item, #masthead .navbar-nav .nav-item .nav-link {
+        padding: 0;
+    }
+    #masthead .navbar-nav .nav-item .nav-link {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .statistic-number, .statistic-number h4, .wwa-col > h3 {
+        font-size: 10.8696vw;
+        line-height: 12.56039vw;
+    }
+    .statistic-title {
+        font-size: 5.7971vw;
+        line-height: 7.24638vw;
+    }
+    #services, .extra-row, .footer-row.footer-row-center > div {
+        padding: 50px 0;
+    }
+    .iconbox-services {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
+    }
+    .iconbox-services .iconbox-thumbnail {
+        width: 75px;
+    }
+    .iconbox-services .iconbox-body h4 {
+        font-size: 3.8647vw;
+        line-height: 4.34783vw;
+    }
+    .iconbox-services .iconbox-body p {
+        font-size: 2.8986vw;
+        line-height: 3.8647vw;
+    }
+    .wwa-inner {
+        padding: 50px 25px;
+        border-radius: 25px;
+    }
+    .wwa-col > h3 {
+        width: 80%;
+    }
+    .extra-logo {
+        width: 125px;
+    }
+    .extra-content {
+        padding-top: 32px;
+    }
+    .extra-content .extra-col > p {
+        width: 100%;
+    }
+    .swiper-po {
+        width: 200px;
+    }
+    .swiper-po .po-thumbnail {
+        width: 150px;
     }
     .footer-navigation .nav .nav-item, .footer-copyright {
         font-size: 14px;
@@ -199,13 +356,95 @@ html, body {
         height: 14px;
     }
 }
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .iconbox-services {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    .wwa-col.col-header {
+        width: 30%;
+    }
+    .wwa-col.col-body {
+        width: 70%;
+    }
+}
 @media (min-width: 768px) and (orientation: landscape) {
     #introduction .background {
         background-image: url(/aquila/images/bg-aquila-intro-banner.jpg);
     }
 }
+@media (min-width: 768px) and (max-width: 1199px) {
+    html, body {
+        font-size: 1.82292vw;
+    }
+    #masthead .navbar-nav {
+        gap: 32px;
+    }
+    #masthead .navbar-nav .nav-item .nav-link {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .intro-banner::before {
+        background: linear-gradient(90deg, #000 55%, #57575700 80%, #66666600 100% );
+    }
+    .intro-banner-inner {
+        padding: 50px 0;
+    }
+    .intro-banner-caption h1 {
+        font-size: 3.38541vw;
+        line-height: 4.16667vw;
+    }
+    .intro-banner-caption h1 .t1 {
+        font-size: 150%;
+        line-height: 125%;
+    }
+    .extra-content {
+        padding-top: 0;
+    }
+    .extra-content .responsible-gambling-icon {
+        width: 65px;
+        height: 65px;
+    }
+    .wwa-inner {
+        padding: 50px 70px;
+        padding-right: 30px;
+    }
+    .wwa-col.col-header {
+        width: 33.333333%;
+    }
+    .wwa-col.col-body {
+        width: 66.666667%;
+    }
+    .extra-logo {
+        width: 150px;
+        min-width: 150px;
+    }
+    .title-gradient, .statistic-number h4 {
+        font-size: 5.859375vw;
+        line-height: 6.77083vw;
+    }
+    .iconbox-services .iconbox-thumbnail {
+        width: 90px;
+    }
+    #swiper-payment-options .swiper-po {
+        width: 150px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .iconbox-services {
+        gap: 16px;
+    }
+}
+@media (max-width: 1199px) {
+    #swiper-payment-options .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+}
 @media (min-width: 1200px) {
+    html, body {
+        font-size: 1.11111vw;
+        line-height: 1.66667vw;
+    }
     #masthead .navbar-nav .nav-item .nav-link {
         font-size: 1.666667vw;
         line-height: 2.22222vw;
@@ -222,7 +461,49 @@ html, body {
         font-size: 3.125vw;
         line-height: 2.3611vw;
     }
+    .statistic-number, .statistic-number h4 {
+        font-size: 4.166667vw;
+        line-height: 5vw;
+    }
+    .wwa-row .wwa-col:not(:first-child)::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: #FDDE83;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    .extra-col.col-header h3 {
+        font-size: 3.125vw;
+        line-height: 3.6111vw;
+    }
+    .extra-content {
+        padding-top: 4.51389vw;
+    }
+    .extra-row .extra-logo {
+        min-width: 16.31944vw;
+        width: 16.31944vw;
+    }
+    .extra-description p {
+        font-size: 1.52778vw;
+        line-height: 1.80556vw;
+    }
+    .iconbox-services .iconbox-thumbnail {
+        width: 8.1944vw;
+    }
+    .po-title {
+        font-size: 0.83333vw;
+        line-height: 1.041667vw;
+    }
 }
-@media (min-width: 1400px) {
-
+@media (min-width: 1800px) {
+    .who-we-are {
+        padding-left: 2.62743vw;
+    }
+    .wwa-col.col-header h3 {
+        padding-right: 2.62743vw;
+    }
 }
