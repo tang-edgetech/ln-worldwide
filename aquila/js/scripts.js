@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
+	AOS.init();
     $(document).ready(function() {
-        console.log(aquila.home_url);
         if( !$('body').hasClass('home') ) {
             $(document).on('click', '#masthead .navbar .navbar-nav .nav-link', function(e) {
                 var $this = $(this),
@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
         }
 
+        $(document).on('click', '#disclaimerModal button[type="button"]', function(e) {
+            e.preventDefault();
+            var $this = $(this),
+                $parents = $this.parents('.pum-container'),
+                $close = $parents.find('button.pum-close.popmake-close');
+            $close.click();
+        });
 
         let lastScrollTop = 0;
     
@@ -29,13 +36,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             lastScrollTop = currentScroll;
         });
 
-        if( $('#disclaimerModal')[0] ) {
-            var disclaimerModal = new bootstrap.Modal(document.getElementById('disclaimerModal'));
-            // setTimeout(function() {
-            //     disclaimerModal.show();
-            // }, 150);
-        }
-
         var paymentOptionsSwiper = new Swiper('#swiper-payment-options', {
             slidesPerView: 8,
             loop: false,
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     slidesPerView: "auto",
                     loop: true,
                     centeredSlides: true,
-                    spaceBetween: 25,
+                    spaceBetween: 15,
                     allowTouchMove: false,
                 },
                 1200: {
@@ -72,5 +72,48 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }, 100);
             }
         });
+
+        $('.iconbox-services .iconbox-item').on('mouseenter', function(e) {
+            var $this = $(this);
+            $('.iconbox-services .iconbox-item').not(this).addClass('gray-out');
+        }).on('mouseleave', function() {
+            $('.iconbox-services .iconbox-item.gray-out').removeClass('gray-out');
+        });
+		
+        autoRunNumberIncrement();
+		$(window).on('scroll', function() {
+            autoRunNumberIncrement();
+		});
+		
+        function autoRunNumberIncrement() {
+			$('.statistic-number').each(function(){
+				var $this = $(this),
+					$number = $this.attr('data-number');
+				if ( !isNaN($number) && !$this.hasClass('animated') && isElementInViewport($this) ) {
+					$this.addClass('animated');
+					$({ counter: 0 }).animate({ counter: $number }, {
+						duration: 3000, // 3 seconds
+						easing: 'swing',
+						step: function(now) {
+							$this.text( formatNumberWithCommas(Math.ceil(now)) + '+' );
+						}
+					});
+				}
+			});
+        }
+
+		function isElementInViewport($el) {
+			var rect = $el[0].getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+		
+		function formatNumberWithCommas(number) {
+			return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		}
     });
 });

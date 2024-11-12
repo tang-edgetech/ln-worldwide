@@ -11,8 +11,15 @@ html, body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
-.app {
+.elementor a, .elementor a:hover, .elementor a:focus {
+	outline: none!important;
+}
+.app, #content {
+    background-color: #222;
     padding-top: 85px;
+}
+.italic {
+	font-style: italic;
 }
 body:not(.home) .footer-row.footer-row-center {
     display: none;
@@ -35,9 +42,9 @@ body:not(.home) .footer-row.footer-row-center {
 }
 #masthead .navbar-nav .nav-item .nav-link {
     color: #fff;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 32px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
     text-transform: capitalize;
 }
 .hamburger, .hamburger:hover, .hamburger:focus {
@@ -88,6 +95,20 @@ a.text-white:hover, a.text-yellow:hover {
 #contact .background {
     background-image: url(/aquila/images/bg-aquila-contact-banner.jpg);
 }
+section#contact::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	z-index: 1;
+}
+section#contact > div[class*='container'] {
+	z-index: 1;
+}
 .intro-banner::before {
     content: '';
     display: block;
@@ -134,10 +155,13 @@ a.text-white:hover, a.text-yellow:hover {
 @keyframes pulse {
     to { transform: scale(1.05); }
 }
+#pum-130 button.pum-close.popmake-close {
+	opacity: 0;
+}
 #disclaimerModal {
     color: #fff;
 }
-#disclaimerModal .modal-body {
+#disclaimerModal .modal-body, #popmake-130 {
     border-radius: 16px;
     overflow: hidden;
     padding: 2rem;
@@ -167,6 +191,7 @@ a.text-white:hover, a.text-yellow:hover {
 .disclaimer-close {
     width: 24px;
     height: 24px;
+	padding: 0;
     background: none;
     box-shadow: none;
     border: none;
@@ -174,6 +199,9 @@ a.text-white:hover, a.text-yellow:hover {
     right: 0;
     cursor: pointer;
     z-index: 1;
+}
+.disclaimer-close:hover, .disclaimer-close:focus {
+	background-color: transparent;
 }
 .disclaimer-close:not(:hover) {
     opacity: 0.85;
@@ -242,16 +270,24 @@ a.text-white:hover, a.text-yellow:hover {
     border-radius: 10px;
     transition: all 0.5s ease;
 }
+.iconbox-services .iconbox-item.aos-animate {
+	transition: all 0.3s ease;
+    transition-delay: 0s !important;
+}
 .iconbox-services .iconbox-item:hover {
     border-color: #FDDE83;
     box-shadow: 0 4px 4px 0 rgba(253, 222, 131, 0.2);
+}
+/* .iconbox-item:hover ~ .iconbox-item { */
+.iconbox-item.gray-out {
+    filter: grayscale(1) opacity(0.45);
 }
 .extra-content {
     padding-top: 70px;
 }
 .responsible-gambling-icon {
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
 }
 .po-title {
     font-size: 12px;
@@ -271,8 +307,16 @@ a.text-white:hover, a.text-yellow:hover {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     border: 1px solid #DFC474;
-    padding: 9px 13px;
+    padding: 10px 16px;
     resize: none;
+	font-size: 18px;
+	line-height: 26px;
+	height: auto;
+}
+.wpcf7 .wp-form-group .input-control:focus, .wpcf7 .wp-form-group input.input-control:focus, .wpcf7 .wp-form-group textarea.input-control:focus,
+.wp-form-group .input-control:focus, .wp-form-group input.input-control:focus, .wp-form-group textarea.input-control:focus {
+	border-style: solid;
+	border-color: #DFC474;
 }
 .wp-form-group .input-control::placeholder, .wp-form-group input.input-control::placeholder, .wp-form-group textarea.input-control::placeholder {
     color: #fff;
@@ -284,18 +328,39 @@ a.text-white:hover, a.text-yellow:hover {
     width: 25px;
     height: 25px;
 }
-.wp-form .wp-form-row-action {
+.wpcf7-form .wp-form-action, .wp-form .wp-form-row-action {
     padding-top: 20px;
 }
-.wp-form .wp-form-row-action button.wpcf7-submit, .wp-form .wp-form-row-action input.wpcf7-submit {
+.wpcf7-form .wp-form-row-action button.wpcf7-submit, .wpcf7-form .wp-form-row-action input.wpcf7-submit, .wp-form .wp-form-row-action button.wpcf7-submit, .wp-form .wp-form-row-action input.wpcf7-submit {
+	display: inline-block;
+	margin: 0 auto;
     padding: 8px 16px;
     width: 150px;
+	font-size: 18px;
+	line-height: 24px;
+	color: #57656F;
     background: linear-gradient(104deg, #FDDE83, #FFFCB1);
     border: none;
     border-radius: 5px;
 }
 .wp-form .wp-form-row-action button.wpcf7-submit:hover, .wp-form .wp-form-row-action input.wpcf7-submit:hover {
     opacity: 0.85;
+}
+.wpcf7-not-valid-tip {
+	text-align: center;
+}
+.wpcf7-response-output {
+	margin-top: 0;
+	text-align: center;
+	color: #fff;
+}
+.wpcf7 .wpcf7-spinner {
+	width: 24px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 .footer-row.footer-row-with-border > div:first-child::before {
     content: '';
@@ -344,6 +409,12 @@ a.text-white:hover, a.text-yellow:hover {
     color: #000;
     pointer-events: none;
 }
+.text-editor ol, .text-editor ul {
+	margin-left: 0;
+}
+.text-editor > ol {
+	padding-left: 0;
+}
 .text-editor > ol {
     counter-reset: list-counter;
     list-style-type: decimal;
@@ -389,12 +460,33 @@ a.text-white:hover, a.text-yellow:hover {
 .text-editor ul li {
     list-style-type: disc;
 }
+.wpcf7-form .wpcf7-list-item {
+	margin-left: 0;
+}
+.wpcf7-form .wpcf7-acceptance label {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	color: #fff;
+}
+.wpcf7-form .wpcf7-acceptance label > input {
+	margin: 0;
+	margin-right: 16px;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	background-color: #D9D9D9;
+}
+.wpcf7-form .wpcf7-acceptance label .wpcf7-list-item-label { 
+	font-size: 16px;
+	line-height: 24px;
+}
 @media (max-width: 767px) {
     html, body {
         font-size: 3.38164vw;
         line-height: 4.8309vw;
     }
-    .app {
+    .app, #content {
         padding-top: 72px;
     }
     #masthead .navbar-brand {
@@ -424,6 +516,10 @@ a.text-white:hover, a.text-yellow:hover {
     #services, .extra-row, .footer-row.footer-row-center > div {
         padding: 50px 0;
     }
+	.responsible-gambling-icon {
+		width: 50px;
+		height: 50px;
+	}
     .iconbox-services {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 16px;
@@ -455,10 +551,7 @@ a.text-white:hover, a.text-yellow:hover {
     .extra-content .extra-col > p {
         width: 100%;
     }
-    .swiper-po {
-        width: 200px;
-    }
-    .swiper-po .po-thumbnail {
+    .swiper-po, .swiper-po .po-thumbnail {
         width: 150px;
     }
     .footer-navigation .nav .nav-item, .footer-copyright {
@@ -474,6 +567,14 @@ a.text-white:hover, a.text-yellow:hover {
         font-size: 16px;
         line-height: 24px;
     }
+	.extra-col.extra-col-connect {
+		width: 60%;
+		justify-content: flex-start;
+		flex-direction: column;
+	}
+	.extra-col.extra-col-rg {
+		width: 40%;
+	}
 }
 @media (min-width: 768px) {
     .iconbox-services {
@@ -486,6 +587,21 @@ a.text-white:hover, a.text-yellow:hover {
     .wwa-col.col-body {
         width: 70%;
     }
+    .wwa-row .wwa-col:not(:first-child)::before, .statistic-row .statistic-col:not(:first-child)::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: #FDDE83;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+	.footer-row.footer-row-bottom a, .footer-row.footer-row-bottom p {
+		font-size: 14px;
+		line-height: 20px;
+	}
 }
 @media (min-width: 768px) and (orientation: landscape) {
     #introduction .background {
@@ -521,8 +637,8 @@ a.text-white:hover, a.text-yellow:hover {
         padding-top: 0;
     }
     .extra-content .responsible-gambling-icon {
-        width: 65px;
-        height: 65px;
+        width: 50px;
+        height: 50px;
     }
     .wwa-inner {
         padding: 50px 70px;
@@ -568,13 +684,16 @@ a.text-white:hover, a.text-yellow:hover {
         line-height: 1.66667vw;
     }
     #masthead .navbar-nav .nav-item .nav-link {
-        font-size: 1.666667vw;
-        line-height: 2.22222vw;
+        font-size: 1.38889vw;
+        line-height: 1.94444vw;
     }
     #introduction .intro-banner {
         height: 43.05556vw;
         padding: 6.9444vw 0;
     }
+	.text-editor > ol > li::before, .text-editor > ul > li::before {
+		font-size: 1.25rem;
+	}
     .intro-banner h1 {
         font-size: 1.6667vw;
         line-height: 2.3611vw;
@@ -586,17 +705,6 @@ a.text-white:hover, a.text-yellow:hover {
     .statistic-number, .statistic-number h4 {
         font-size: 4.166667vw;
         line-height: 5vw;
-    }
-    .wwa-row .wwa-col:not(:first-child)::before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        background: #FDDE83;
-        top: 50%;
-        left: 0;
-        transform: translate(-50%, -50%);
     }
     .extra-col.col-header h3 {
         font-size: 3.125vw;
@@ -610,8 +718,8 @@ a.text-white:hover, a.text-yellow:hover {
         width: 16.31944vw;
     }
     .extra-description p {
-        font-size: 1.52778vw;
-        line-height: 1.80556vw;
+        font-size: 1.11111vw;
+        line-height: 1.66667vw;
     }
     .iconbox-services .iconbox-thumbnail {
         width: 8.1944vw;
@@ -624,6 +732,13 @@ a.text-white:hover, a.text-yellow:hover {
         font-size: 2.0833vw;
         line-height: 2.5vw;
     }
+	#services {
+		padding-top: 70px;
+	}
+	.footer-row.footer-row-bottom a, .footer-row.footer-row-bottom p {
+		font-size: 0.9722vw;
+		line-height: 1.38889vw;
+	}
 }
 @media (min-width: 1800px) {
     .who-we-are {
