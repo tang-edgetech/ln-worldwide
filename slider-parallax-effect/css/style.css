@@ -1,0 +1,157 @@
+body {
+    position: relative;
+}
+.mark-point {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffffff00;
+    z-index: 99;
+}
+* {
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+}
+#current-slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.3);
+    padding: 3px 15px;
+    z-index: 9;
+}
+.section {
+    width: 100%;    
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.bg-white {
+    background: #fff;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
+}
+.bg-dark {
+    background: #1d1d1d;
+}
+.bg-grey {
+    background: #d5d5d5;
+}
+.scroll-sliders {
+    position: relative;
+    z-index: 0;
+}
+.scroll-slide-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    z-index: -1;
+}
+.scroll-wrapper, .content-wrapper {
+    height: 100%;
+}
+.content-item {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: -1;
+}
+.content-item {
+    top: 50%;
+    transform: translateY(-48px);
+}
+.content-item {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+.content-item.active {
+    display: block;
+}
+.content-item.show {
+    opacity: 1;
+    visibility: visible;
+}
+.scroll-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.scroll-slide:not(:first-child) {
+    top: 100%;
+}
+.scroll-slide:first-child {
+    top: 0!important;
+}
+.scroll-slide:not(:first-child) .scroll-background {
+    transform: translate3d(0, -100%, 0);
+}
+.scroll-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.scroll-container {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+.scroll-row, .scroll-col, .scroll-header {
+    display: flex;   
+}
+.scroll-header, .scroll-body {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .scroll-container {
+        max-width: 720px;
+    }
+    .scroll-row, .scroll-col {
+        gap: 25px;
+    }
+    .scroll-row {
+        flex-direction: column;
+    }
+    .scroll-col {
+        justify-content: center;
+    }
+    .scroll-header {
+        justify-content: flex-end;
+    }
+    .scroll-header .scroll-index, .scroll-header .scroll-subtitle {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .scroll-container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .scroll-container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    .scroll-container {
+        max-width: 1280px;
+    }
+}
